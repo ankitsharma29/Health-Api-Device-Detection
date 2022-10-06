@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>headerlinks}}
+</head>
+
+<body>
+    {{>navbar}}
+
+    <!-- main header  -->
+
+    <div class="container-fluid mt-5 contact-style my-3">
+        <div class="row"> 
+            <div class="col-md-5 col-12 mx-auto">
+                <h1 class="text-center text-capitalize ">Profile Page</h1>
+                <img src="../images/{{this.image}}" width="150px" height="150px" class="mx-4 rounded-circle"
+                    alt="Cinque Terre"><br>
+                <label class="form-label">Name</label>
+                <h1 class="form-label text-capitalize">{{username}}</h1>
+                <label class="form-label">Email</label>
+                <h1 class="form-label text-capitalize">{{email}}</h1><br>
+                <label class="form-label">Phone</label>
+                <h1 class="form-label text-capitalize">{{phone}}</h1>
+                <label class="form-label">message</label>
+                <h1 class="form-label text-capitalize">{{message}}</h1>
+                <label class="form-label">Helth api</label>
+                <h1 class="form-label text-capitalize">{{healthapi.1.healthname}}</h1>
+                <label class="form-label">Helth Message</label>
+                <h1 class="form-label text-capitalize">{{healthapi.1.healthmessage}}</h1>
+
+
+                <div class="text-info my-4">
+                    <a href="/update/{{_id}}" role="button"><button type="button" class="btn btn-warning">Edit
+                            Profile</button></a>
+                    <a href="/logoutsingle"><button type="button" class="btn btn-danger">Logout </button></a>
+                    <a href="/logoutmul"><button type="button" class="btn btn-success">Logout All Device</button></a>
+                    
+                    {{!-- //use for design --}}
+                    <button class="btn btn-primary">
+                        <span class="spinner-border spinner-border-sm"></span>
+                        Loading..
+                    </button>
+                </div>
+
+
+                <!-- password change -->
+                <form action="/passreset" method="POST">
+                    <h2 class="form-label text-capitalize">Reset Password - </h2>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" class="form-label">Current password</label>
+                        <input type="password" class="form-control" name="Currpassword" value=""
+                            id="exampleFormControlInput1" placeholder="Current a password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" class="form-label">New password</label>
+                        <input type="password" class="form-control" name="newpassword" value=""
+                            id="exampleFormControlInput1" placeholder="New a password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" class="form-label">Retype New password</label>
+                        <input type="password" class="form-control" name="repassword" value=""
+                            id="exampleFormControlInput1" placeholder="Retype a password">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    {{>footer}}
+</body>
+
+</html>
